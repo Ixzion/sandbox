@@ -7,7 +7,7 @@
  */
  
 // mysqli Connection
-$oMySQLi = new mysqli("localhost", "root", "password", "database_name");
+$oMySQLi = new mysqli("localhost", "root", "password", "library");
 
 if (mysqli_connect_errno()) {
     die("Database connection failure: <br />" . mysqli_connect_error());
@@ -34,7 +34,7 @@ abstract class cAuthor
     function addAuthor($fname, $lname)
     {
       // This needs to add the author's id into the mix
-      $q = "INSERT INTO authors (last_name, first_name) VALUES ('$lname', '$fname')";
+      $q = "INSERT INTO authors (last_name, first_name) VALUES ('$this->lname', '$this->fname')";
       $this->SQL->query($q);
       $id = mysqli_insert_id($this->SQL);
       
