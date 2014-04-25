@@ -34,7 +34,7 @@ abstract class cAuthor
     function addAuthor($fname, $lname)
     {
       // This needs to add the author's id into the mix
-      $q = "INSERT INTO authors (last_name, first_name) VALUES ('$this->lname', '$this->fname')";
+      $q = "INSERT INTO authors (last_name, first_name) VALUES ('$lname', '$fname')";
       $this->SQL->query($q);
       $id = mysqli_insert_id($this->SQL);
       
