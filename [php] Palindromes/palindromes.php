@@ -1,6 +1,7 @@
 <?php
 
-function recursiveCheck ($sSentence, $aPalindromes = array()) {
+// This checks a sentence for recursive words and returns them
+function returnPalindromes ($sSentence, $aPalindromes = array()) {
     
     $aOGString = explode(" ", $sSentence);
     
@@ -24,16 +25,16 @@ function recursiveCheck ($sSentence, $aPalindromes = array()) {
     else {
         // Remove the first element, then implode.
         $sSentence = implode(" ", $aOGString);
-        recursiveCheck($sSentence, $aPalindromes);
+        returnPalindromes($sSentence, $aPalindromes);
     }
     
     
 }
 
 
-$string = "How many level aa of palindromes did we see in aaaaaa this poop chute aa?";
+$string = "Are your palindromes on the level or is your kayak due to implode at noon, good madam?";
 
-recursiveCheck($string);
+returnPalindromes($string);
 
 
 ?>
